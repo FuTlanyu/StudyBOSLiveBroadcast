@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:background="@drawable/light_blue">
+
+    <FrameLayout
+        android:id="@+id/message_top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#6000">
+
+        <Button
+            android:id="@+id/message_back_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/ic_back"
+            android:layout_margin="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="消息"
+            android:textColor="#fff"
+            android:textSize="24sp"
+            android:id="@+id/message_chatter" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:id="@+id/message_bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#4000"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/message_message"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:textSize="24sp"
+            android:layout_height="wrap_content"
+            android:theme="@style/MyEditText"/>
+
+        <Button
+            android:id="@+id/message_send"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="发送"
+            android:textColor="#fff"
+            android:textSize="24sp"
+            android:background="#2000"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@id/message_top_layout"
+        android:layout_above="@id/message_bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/message_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
+
+</RelativeLayout>
